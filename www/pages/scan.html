@@ -1,0 +1,65 @@
+<template>
+    <div class="page dark-mode">
+        <div class="navbar bg-black">
+            <div class="navbar-bg bg-black"></div>
+            <div class="navbar-inner sliding">
+                <div class="title text-warning">Dzz_</div>
+            </div>
+        </div>
+        <div class="page-content bg-black">
+            <div class="block-title text-center bg-black text-warning p-5">
+                <h1>/Scanear_</h1></div>
+            <button class="button btn-warning text-warning border border-warning bg-black p-4" @click=${doScan}>
+                <h2>Escanear</h2>
+                <i class="icon f7-icons">qrcode</i>
+            </button>
+            ${ scan.value.text ?
+                $h`
+                <div class="block-title">Resultado</div>
+                <div class="block">
+                    >>: ${scan.value.format} Código: ${scan.value.text}
+                </div>
+                `
+                :
+                ''
+            }
+        </div>
+    </div>
+</template>
+<script>
+    export default (props, {
+        $store
+    }) => {
+        const {
+            scan
+        } = $store.getters;
+
+        const doScan = async () => {
+            try {
+                console.log(monaca.BarcodeScanner);
+
+                const res = await execute();
+
+                $store.dispatch('addScan', res.data);
+            } catch (e) {
+                alert(JSON.stringify(e));
+            }
+        };
+
+        const execute = () => {
+            return new Promise((res, rej) => {
+                const option = {
+                    "oneShot": true,
+                    "timeoutPrompt": {
+                        "show": true,
+                        "timeout": 5,
+                        "prompt": "Não detectado"
+                    }
+                };
+
+                monaca.BarcodeScanner.scan(res, rej, option);
+            });
+        }
+        return $render;
+    }
+</script>

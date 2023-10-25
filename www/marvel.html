@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+    html,
+    body {
+        font-family: 'Hammersmith One', sans-serif;
+        overflow-x: hidden;
+    }
+    
+    .custom-navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+    
+    .custom-navbar button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .decoration-none {
+        text-decoration: none;
+    }
+</style>
+
+<body class="bg-black">
+    <nav class="navbar navbar-expand-lg text-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="text-center" width="70px" height="70px" src="https://raw.githubusercontent.com/DevJuanzok4/Portifolio-Juan-Coutinho./main/Di%20(2).png">
+                </center>
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i style="font-size: 2rem; " class="bi bi-list text-warning"></i>
+    </button>
+            <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link active text-white" aria-current="page" href="#">Configurações <i class="bi bi-gear-wide-connected"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ver Mais
+          </a>
+                        <ul class="dropdown-menu text-white">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="card text-white bg-black p-2 border border-warning">
+        <img width="100px" height="120px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_54cfP-CCORuLZDkg2MiatgqsRsE7U4dkzz_8GaJLFVJ30uGM07hzRLzXppFAEwQHYtU&usqp=CAU" class="card-img" alt="...">
+        <div class="card-img-overlay">
+        </div>
+    </div>
+
+<br>
+    
+    <div class="container p-2">
+        <div class="row">
+
+            <h1 class="text-warning lead">Nosso Catalogo de Vendas</h1>
+            <div class="col-6 col-md-4">
+
+                <a href="meusaldo.html" class="card-link decoration-none">
+                    <div class="card bg-black border border-warning">
+                        <div class="card-body">
+                            <center>
+                                <i style="font-size: 2rem;" class="bi bi-journal-x text-center text-warning"></i>
+                                <h5 class="card-title text-warning">Hqs</h5>
+                            </center>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-md-4">
+                <a href="series.html" class="card-link decoration-none">
+                    <div class="card border border-warning bg-black">
+                        <div class="card-body">
+                            <center>
+                                <i class="bi bi-camera-video text-warning" style="font-size: 2rem;"></i>
+                                <h5 class="card-title text-warning">Séries</h5>
+                            </center>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+   
+
+    
+    <div class="custom-navbar bg-black">
+        <button  class="p-1" id="home">
+            <i class="bi bi-cart-check-fill" style="font-size: 1.5rem;"></i><br>
+Compras
+        </button>
+        <button class="p-1 decoration-none text-white" id="about">
+            <a class="decoration-none text-white" href="pagar.html">
+            <i class="bi bi-upc-scan" style="font-size: 2rem;"></i><br>
+ <h3>Pagar</h3>
+ </a>
+        </button>
+        <button class="p-1" id="contact">
+            <i class="bi bi-bell-fill" style="font-size: 1.5rem;"></i><br>
+            Novidades
+            </button>
+    </div>
+    <div class="content">
+        <!-- Conteúdo da página -->
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

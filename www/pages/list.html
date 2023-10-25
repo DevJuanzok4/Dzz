@@ -1,0 +1,35 @@
+<template>
+  <div class="page dark-mode">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner sliding">
+        <div class="title">Seu Histórico</div>
+   <i class="icon f7-icons">qrcode</i>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="block-title">Histórico de Digitalizações</div>
+      <div class="list media-list">
+        <ul>
+          ${history.value.map(h => $h`
+          <li>
+            <div class="item-inner">
+              <div class="item-title-row">
+                <div class="item-subtitle">${h.format}</div>
+                <div class="item-text">${h.text}</div>
+              </div>
+            </div>
+          </li>
+          `)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+  export default (props, { $store }) => {
+    // Obter dados do histórico do store
+    const { history } = $store.getters;
+    return $render;
+  }
+</script>

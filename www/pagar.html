@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: content:">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+    <meta name="theme-color" content="#000">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>My App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="framework7/framework7-bundle.min.css">
+    
+    <link rel="stylesheet" href="custom-dark-theme.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="custom-dark-theme.css"> <!-- Adicione este link para o estilo do tema escuro -->
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+    html,
+    body {
+        font-family: 'Hammersmith One', sans-serif;
+        overflow-x: hidden;
+    }
+    
+        </style>
+</head>
+
+<body class="bg-black">
+    <div id="app">
+
+        <div class="views tabs safe-areas">
+
+            <div class="toolbar toolbar-bottom tabbar-labels dark-mode bg-black"> <!-- Adicione a classe "dark-mode" para ativar o modo escuro -->
+                <div class="toolbar-inner">
+                    <a href="#view-home" class="tab-link tab-link-active text-warning">
+                        <i class="icon f7-icons text-warning">qrcode</i>
+                        <span class="tabbar-label text-warning">Pagar</span>
+                    </a>
+                    <a href="#view-list" class="tab-link">
+                        <i class="icon f7-icons text-warning">list_dash</i>
+                        <span class="tabbar-label text-warning">Extrato Bancário</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="view-home" class="view view-main view-init tab tab-active dark-mode bg-black" data-url="/scan/">
+            </div>
+            <div id="view-list" class="view view-init tab dark-mode" data-url="/list/">
+            </div>
+        </div>
+
+    </div>
+                
+    <script src="framework7/framework7-bundle.min.js"></script>
+    <script src="js/cordova-app.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+    <script src="components/loader.js"></script>
+</body>
+
+</html>

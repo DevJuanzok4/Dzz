@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+        html,
+        body {
+            font-family: 'Hammersmith One', sans-serif;
+        }
+        
+        .custom-navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        
+        .custom-navbar button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .decoration-none {
+            text-decoration: none;
+        }
+        
+        .container {
+            border-radius: 40px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .table th,
+        .table td {
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+
+<body class="bg-black">
+
+    <body class="bg-black">
+        <nav class="navbar navbar-expand-lg text-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="pagina_inicial.html">
+                    <img class="text-center" width="70px" height="70px" src="https://raw.githubusercontent.com/DevJuanzok4/Portifolio-Juan-Coutinho./main/Di%20(2).png">
+                    </center>
+                </a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i style="font-size: 2rem; " class="bi bi-list text-primary"></i>
+    </button>
+                <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+
+                            <a class="nav-link active text-white" aria-current="page" href="#">Configurações <i class="bi bi-gear-wide-connected"></i></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ver Mais
+          </a>
+                            <ul class="dropdown-menu text-white">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="card text-white bg-black p-4 border border-primary">
+            <img class="border border-primary" src="https://www.remessaonline.com.br/blog/wp-content/uploads/2019/07/RM_blog-header-Como-Resgatar-Investimentos-no-Exterior-1.png" class="card-img" alt="...">
+            <div class="card-img-overlay">
+
+
+            </div>
+            </di <br><br>
+            <div class="container bg-black border border-primary">
+                <br>
+                <h1 class="text-primary">Investimentos</h1>
+
+                <table class="table p-1 border border-primary">
+                    <thead>
+                        <tr>
+                            <th class="bg-black text-primary">Ativo</th>
+                            <th class="bg-black text-primary">Quantidade</th>
+                            <th class="bg-black text-primary">Atual</th>
+                            <th class="bg-black text-primary">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bg-black text-white">Ações</td>
+                            <td class="bg-black text-white">100</td>
+                            <td class="bg-black text-white">R$ 100.00</td>
+                            <td class="bg-black text-white">R$ 10,000</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-black text-white">Renda Fixa</td>
+                            <td class="bg-black text-white">5,000</td>
+                            <td class="bg-black text-white">R$ 10.00</td>
+                            <td class="bg-black text-white">R$ 50,000</td>
+                        </tr>
+                        <!-- Adicione mais linhas conforme necessário -->
+                    </tbody>
+                </table>
+            </div>
+<br>
+
+
+    <div class="custom-navbar bg-black">
+        <button  class="p-1" id="home">
+            <i class="bi bi-cart-check-fill" style="font-size: 1.5rem;"></i><br>
+              <a class="decoration-none text-white" href="compras.html">
+Compras
+          </a>
+        </button>
+        <button class="p-1 decoration-none text-white" id="about">
+            <a class="decoration-none text-white" href="pagar.html">
+            <i class="bi bi-upc-scan" style="font-size: 2rem;"></i><br>
+ <h3>Pagar</h3>
+ </a>
+        </button>
+        <button class="p-1" id="contact">
+            <i class="bi bi-bell-fill" style="font-size: 1.5rem;"></i><br>
+              <a class="decoration-none text-white" href="not.html">
+            Novidades
+            </a>
+            </button>
+    </div>
+    </body>
+
+</html>

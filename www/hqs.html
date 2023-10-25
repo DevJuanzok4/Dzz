@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Marvel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+        html,
+        body {
+            font-family: 'Hammersmith One', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .custom-navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        
+        .custom-navbar button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .decoration-none {
+            text-decoration: none;
+        }
+        /* Estilos personalizados */
+        
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .topo {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 10px 0;
+        }
+        
+        .menu-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .logo {
+            text-align: center;
+        }
+        
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        
+        .menu {
+            text-align: center;
+        }
+        
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .menu-button,
+        .fechar {
+            display: none;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background-color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .mobile-menu a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding: 10px 0;
+        }
+        
+        .titulo {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        
+        #toggle-view-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .pesquisa {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .search {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .personagens-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .hero {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            max-width: 250px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .hero:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
+        /* Estilos personalizados para as HQs */
+        
+        .hero {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            max-width: 250px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .hero:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
+        /* Estilizando o preço */
+        
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #FFD700;
+            /* Cor do ouro */
+        }
+        /* Estilizando o botão de compra */
+        
+        .buy-button {
+            background-color: #FFD700;
+            /* Cor do ouro */
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .buy-button:hover {
+            background-color: #FFA500;
+            /* Cor da laranja */
+        }
+        /* Navbar personalizada */
+        
+        .navbar {
+            background-color: #00000 !important;
+        }
+        
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+        }
+        
+        .navbar-toggler-icon {
+            background-color: #fff !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: bold;
+        }
+        
+        .navbar-collapse {
+            justify-content: flex-end !important;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+     <nav class="navbar navbar-expand-lg text-white bg-black">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="text-center" width="70px" height="70px" src="https://raw.githubusercontent.com/DevJuanzok4/Portifolio-Juan-Coutinho./main/Di%20(2).png">
+                </center>
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i style="font-size: 2rem; " class="bi bi-list text-warning"></i>
+    </button>
+            <div class="collapse navbar-collapse text-white" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link active text-white" aria-current="page" href="#">Configurações <i class="bi bi-gear-wide-connected"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ver Mais
+          </a>
+                        <ul class="dropdown-menu text-white">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bg-black">
+        <h1 class="titulo  text-warning">Comprar HQs/ <i class="bi bi-cart-check"></i></h1>
+           <hr class="border border-warning border-2 opacity-50">
+
+<br>
+
+    <div class="card text-white bg-black p-2 border border-warning">
+        <img width="100px" height="120px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_54cfP-CCORuLZDkg2MiatgqsRsE7U4dkzz_8GaJLFVJ30uGM07hzRLzXppFAEwQHYtU&usqp=CAU" class="card-img" alt="...">
+        <div class="card-img-overlay">
+        </div>
+    </div>
+             <button id="toggle-view-button">
+            <i class="fas fa-list"></i>
+            <i class="fas fa-th"></i>
+        </button>
+        <div class="pesquisa">
+            <input width="100px" type="text" name="search" id="search" class="search" placeholder="Pesquisar HQs">
+        </div>
+
+        <div id="personagens" class="personagens-container">
+
+        </div>
+
+    </main>
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmação de Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza de que deseja comprar este quadrinho?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmPurchase">Confirmar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="custom-navbar bg-black">
+        <button class="p-1" id="home">
+            <i class="bi bi-cart-check-fill" style="font-size: 1.5rem;"></i><br>
+Compras
+        </button>
+        <button class="p-1 decoration-none text-white" id="about">
+            <a class="decoration-none text-white" href="pagar.html">
+            <i class="bi bi-upc-scan" style="font-size: 2rem;"></i><br>
+ <h3>Pagar</h3>
+ </a>
+        </button>
+        <button class="p-1" id="contact">
+            <i class="bi bi-bell-fill" style="font-size: 1.5rem;"></i><br>
+            Novidades
+            </button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script>
+        // Seu código JavaScript aqui...
+        const publicKey = 'bc6189e1f8f98580674b7c342aa1d163';
+        const privateKey = '8e32b177b450fa8dd81bc5d65eddcb55f26c6e92';
+
+        function generateHash(timestamp) {
+            const hash = CryptoJS.MD5(timestamp + privateKey + publicKey).toString();
+            return hash;
+        }
+
+        function searchHero() {
+            const searchInput = document.getElementById("search");
+            const searchTerm = searchInput.value.trim();
+
+            if (searchTerm === "") {
+                return;
+            }
+
+            const timestamp = new Date().getTime();
+            const hash = generateHash(timestamp);
+            const apiUrl = `https://gateway.marvel.com/v1/public/series?apikey=${publicKey}&ts=${timestamp}&hash=${hash}&titleStartsWith=${searchTerm}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    displayHeroes(data.data.results);
+                })
+                .catch(error => {
+                    console.error('Erro ao fazer a requisição:', error);
+                });
+        }
+
+        function displayHeroes(heroes) {
+            const personagensDiv = document.getElementById("personagens");
+            personagensDiv.innerHTML = "";
+
+            heroes.forEach(hero => {
+                const divHero = document.createElement("div");
+                divHero.classList.add("hero");
+
+                const img = document.createElement("img");
+                img.src = `${hero.thumbnail.path}.${hero.thumbnail.extension}`;
+                img.alt = hero.title;
+
+                const title = document.createElement("h2");
+                title.textContent = hero.title;
+
+                const description = document.createElement("p");
+                description.textContent = hero.description || "Descrição não disponível";
+
+                const price = document.createElement("p");
+                price.textContent = "Preço: R$34,99";
+                price.classList.add("price"); // Adicionando a classe 'price' ao preço.
+
+                const buyButton = document.createElement("button");
+                buyButton.textContent = "Comprar";
+                buyButton.classList.add("buy-button"); // Adicionando a classe 'buy-button' ao botão.
+                buyButton.addEventListener("click", () => {
+                    alert(hero.title + " | Item adicionado no Carrinho!");
+                });
+
+                divHero.appendChild(img);
+                divHero.appendChild(title);
+                divHero.appendChild(description);
+                divHero.appendChild(price);
+                divHero.appendChild(buyButton);
+
+                personagensDiv.appendChild(divHero);
+            });
+        }
+
+        const searchInput = document.getElementById("search");
+        searchInput.addEventListener("input", debounce(searchHero, 800));
+
+        function debounce(func, delay) {
+            let timeoutId;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(function() {
+                    func.apply(context, args);
+                }, delay);
+            };
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const buyButtons = document.querySelectorAll(".buy-button");
+
+            buyButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const modal = new bootstrap.Modal(document.getElementById("confirmationModal"));
+                    modal.show();
+                });
+            });
+
+            const confirmPurchaseButton = document.getElementById("confirmPurchase");
+            confirmPurchaseButton.addEventListener("click", () => {
+                // Coloque a lógica de compra aqui
+                alert("Compra confirmada!");
+            });
+        });
+    </script>
+</body>
+
+</html>
